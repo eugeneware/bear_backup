@@ -127,10 +127,11 @@ class Note(object):
         zip_file.writestr(os.path.join(filename, "text.txt"),
                           self.text_with_converted_asset_paths())
         # Add assets
-        for filename in self.asset_filenames():
-            zip_file.write(filename,
+        for asset_filename in self.asset_filenames():
+            pdb.set_trace()
+            zip_file.write(asset_filename,
                            os.path.join(filename,
-                                        self.convert_asset_path(filename)))
+                                        self.convert_asset_path(asset_filename)))
 
 class BearDb(object):
 
