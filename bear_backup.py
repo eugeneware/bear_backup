@@ -120,8 +120,10 @@ class Note(object):
                                compression=zipfile.ZIP_DEFLATED)
         # Add info.json
         zip_file.writestr(os.path.join(filename, "info.json"), json.dumps({
-            "type": "public.plain-text",
-            "version": "2"
+            "transient" : True,
+            "type" : "public.plain-text",
+            "creatorIdentifier" : "net.shinyfrog.bear",
+            "version" : 2
         }))
         # Add text
         zip_file.writestr(os.path.join(filename, "text.txt"),
